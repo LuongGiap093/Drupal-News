@@ -1,0 +1,5 @@
+services:
+  content_moderation_node_grants.configuration_event_subscriber:
+    class: Drupal\content_moderation_node_grants\EventSubscriber\ConfigurationSubscriber
+    tags:
+      - { name: event_subscriber }

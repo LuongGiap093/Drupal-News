@@ -1,0 +1,7 @@
+gitea.settings:
+  path: '/admin/config/development/gitea'
+  defaults:
+    _title: 'Settings'
+    _form: 'Drupal\gitea\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

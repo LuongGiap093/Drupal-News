@@ -1,0 +1,13 @@
+{
+  "name": "drupal/gitea",
+  "description": "Connects to gitea.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Calibrate",
+      "email": "developers@calibrate.be",
+      "homepage": "https://www.calibrate.be"
+    }
+  ]
+}

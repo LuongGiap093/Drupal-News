@@ -1,0 +1,6 @@
+<?php
+
+function news_fe_preprocess_node(&$variables) {
+  $node = $variables['node'];
+//  dump($node->field_image);
+}

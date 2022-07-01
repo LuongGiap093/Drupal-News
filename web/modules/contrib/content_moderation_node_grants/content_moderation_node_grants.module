@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for the Content Moderation Node Grants module.
+ *
+ * @see https://www.drupal.org/project/drupal/issues/3161658
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_help().
+ */
+function content_moderation_node_grants_help($route_name, RouteMatchInterface $route_match) {
+  // Main module help for the module.
+  if ($route_name === 'help.page.content_moderation_node_grants') {
+    $output = '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('<a href=":issue_link">@issue</a> - Provides <code>node_grants</code> support for Content moderated content.', [
+      '@issue' => '#3161658',
+      ':issue_link' => 'https://www.drupal.org/project/drupal/issues/3161658',
+    ]) . '</p>';
+
+    $readme_content = file_get_contents(__DIR__ . '/README.md');
+
+    if (Drupal::moduleHandler()->moduleExists('markdown')) {
+      $output .= Xss::filterAdmin(
+        Drupal::moduleHandler()->invoke(
+          'markdown', 'filter', ['process', 0, -1, $readme_content])
+      );
+    }
+
+    $output .= '<h3>Content Moderation Node Grants README</h3><pre>' . Html::escape($readme_content) . '</pre>';
+    return $output;
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_node_access_records().
+ *
+ * @see content_moderation_node_grants_node_grants()
+ * @see hook_node_access_records()
+ */
+function content_moderation_node_grants_node_access_records(NodeInterface $node) {
+  $grants = [];
+
+  if (!$node->isPublished()) {
+    $grants[] = [
+      'realm' => 'view any unpublished content',
+      'gid' => 0,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+    ];
+  }
+
+  /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
+  $moderation_info = Drupal::service('content_moderation.moderation_information');
+  if ($moderation_info->isModeratedEntity($node) && $node->moderation_state) {
+    /* @see \Drupal\content_moderation\StateTransitionValidation::getValidTransitions() */
+    $workflow = $moderation_info->getWorkflowForEntity($node);
+    if ($workflow) {
+      $current_state = $node->moderation_state->value ? $workflow->getTypePlugin()->getState($node->moderation_state->value) : $workflow->getTypePlugin()->getInitialState($node);
+      foreach ($current_state->getTransitions() as $transition) {
+        $grants[] = [
+          'realm' => 'use ' . $workflow->id() . ' transition ' . $transition->id(),
+          'gid' => 0,
+          'grant_view' => 0,
+          'grant_update' => 1,
+          'grant_delete' => 0,
+        ];
+      }
+    }
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_grants().
+ *
+ * @see content_moderation_entity_access()
+ * @see node_query_node_access_alter()
+ * @see hook_node_grants()
+ */
+function content_moderation_node_grants_node_grants(AccountInterface $account, $op) {
+  $grants = [];
+  if ($op === 'view') {
+    if ($account->hasPermission('view any unpublished content')) {
+      $grants['view any unpublished content'] = [0];
+    }
+  }
+  elseif ($op === 'update') {
+    /** @var \Drupal\workflows\WorkflowInterface $workflow */
+    /* @see \Drupal\content_moderation\Permissions::transitionPermissions() */
+    foreach (Workflow::loadMultipleByType('content_moderation') as $workflow) {
+      foreach ($workflow->getTypePlugin()->getTransitions() as $transition) {
+        $permission = 'use ' . $workflow->id() . ' transition ' . $transition->id();
+        if ($account->hasPermission($permission)) {
+          $grants[$permission] = [0];
+        }
+      }
+    }
+  }
+
+  return $grants;
+}

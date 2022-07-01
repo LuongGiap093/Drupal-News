@@ -1,0 +1,11 @@
+name: Optimize config storage
+description: Optimize config storage query
+package: Config
+
+type: module
+core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2022-04-20
+version: '1.0.2'
+project: 'optimize_config_storage'
+datestamp: 1650489946

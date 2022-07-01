@@ -1,0 +1,5 @@
+gitea.settings:
+  title: Gitea
+  parent: system.admin_config_development
+  route_name: gitea.settings
+  weight: 10

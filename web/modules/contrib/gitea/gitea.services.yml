@@ -1,0 +1,3 @@
+services:
+  gitea.client:
+    class: Drupal\gitea\Gitea
