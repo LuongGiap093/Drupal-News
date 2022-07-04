@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'c4218a3729fe519f05ee10b136fc68c86d1a45ec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -968,9 +968,9 @@
             ),
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'c4218a3729fe519f05ee10b136fc68c86d1a45ec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1062,6 +1062,15 @@
             'replaced' => array(
                 0 => '9.3.11',
             ),
+        ),
+        'drupal/svg_image' => array(
+            'pretty_version' => '1.16.0',
+            'version' => '1.16.0.0',
+            'reference' => '8.x-1.16',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/svg_image',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'drupal/syslog' => array(
             'dev_requirement' => false,
@@ -1198,6 +1207,15 @@
             'reference' => '196bacc76e7a72a63d0e1220926dbb190272db97',
             'type' => 'library',
             'install_path' => __DIR__ . '/../enlightn/security-checker',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'enshrined/svg-sanitize' => array(
+            'pretty_version' => '0.15.4',
+            'version' => '0.15.4.0',
+            'reference' => 'e50b83a2f1f296ca61394fe88fbfe3e896a84cf4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../enshrined/svg-sanitize',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

@@ -50,6 +50,10 @@ class ComposerStaticInit176ad4ca81b3c868907db92c64a9cf5f
         array (
             'mglaman\\PHPStanDrupal\\' => 22,
         ),
+        'e' => 
+        array (
+            'enshrined\\svgSanitize\\' => 22,
+        ),
         'W' => 
         array (
             'Webmozart\\PathUtil\\' => 19,
@@ -191,6 +195,10 @@ class ComposerStaticInit176ad4ca81b3c868907db92c64a9cf5f
         'mglaman\\PHPStanDrupal\\' => 
         array (
             0 => __DIR__ . '/..' . '/mglaman/phpstan-drupal/src',
+        ),
+        'enshrined\\svgSanitize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
         ),
         'Webmozart\\PathUtil\\' => 
         array (

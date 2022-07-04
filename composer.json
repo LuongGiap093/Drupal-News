@@ -33,6 +33,7 @@
         "drupal/restui": "^1.20",
         "drupal/search_api": "^1.23",
         "drupal/simple_percentage_field": "^1.0",
+        "drupal/svg_image": "^1.16",
         "drupal/twig_vardumper": "^3.0",
         "drupal/tzfield": "^1.6",
         "drush/drush": "^10.6"
