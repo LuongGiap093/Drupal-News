@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'c4218a3729fe519f05ee10b136fc68c86d1a45ec',
+        'reference' => '59b1272036b24d691a6ab499470442387f1e5a9d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -271,6 +271,15 @@
                 0 => '9.3.11',
             ),
         ),
+        'drupal/autosave_form' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => '8.x-1.4',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/autosave_form',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/ban' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -300,6 +309,15 @@
             'replaced' => array(
                 0 => '9.3.11',
             ),
+        ),
+        'drupal/block_class' => array(
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => '8.x-1.3',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/block_class',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'drupal/block_content' => array(
             'dev_requirement' => false,
@@ -712,6 +730,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/gutenberg' => array(
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
+            'reference' => '8.x-2.5',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/gutenberg',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/hal' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -970,7 +997,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'c4218a3729fe519f05ee10b136fc68c86d1a45ec',
+            'reference' => '59b1272036b24d691a6ab499470442387f1e5a9d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

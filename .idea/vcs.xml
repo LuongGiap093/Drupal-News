@@ -7,22 +7,34 @@
     <mapping directory="$PROJECT_DIR$/social_open_graph" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/syncore" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/toggle_channels" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/block_id" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/data_masking" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/devel_generate_commerce" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/ebt_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/editionguard_api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/entity_repeat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/entity_version" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/estimated_read_time" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/face_recognition_aws" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/fluent" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/google_json_api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/group_bulk_operations" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/gutengberg-komponent" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/media_external" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/media_files_handler" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/odt_importer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/outdated_content" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/pdf_generator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/registration" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/scroll_top_button" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/shy_one_time" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/social_open_graph" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/tagify" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/tarte_au_citron" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/toggle_channels" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/views_dynamic_entity_row" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/websitecarbon" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/custom/drupal-module-crud" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/custom/gutengberg-komponent" vcs="Git" />
   </component>
 </project>
